@@ -1,6 +1,6 @@
 {
   "name": "@ipaat/vue3-tailwind3-cookie-comply",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS 3.",
   "author": "iPaat",
   "private": false,

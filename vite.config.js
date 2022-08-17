@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     lib: {
       formats: ['es', 'umd'],
-      entry: resolve(__dirname, 'src', 'entry.js'),
+      entry: resolve(__dirname, 'src', 'entry.esm.js'),
       name: 'VueCookieComply',
       fileName: (format) => `vue3-tailwind3-cookie-comply.${format}.js`
     },
