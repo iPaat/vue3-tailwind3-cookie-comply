@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.13f391c7.js";const i=JSON.parse('{"title":"Customize","description":"","frontmatter":{},"headers":[],"relativePath":"guide/customize.md","lastUpdated":null}'),o={name:"guide/customize.md"},p=l("",4),t=[p];function e(c,D,r,F,y,C){return a(),n("div",null,t)}var u=s(o,[["render",e]]);export{i as __pageData,u as default};
