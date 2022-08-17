@@ -14,7 +14,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/iPaat/vue3-tailwind3-cookie-comply/edit/main/docs/:path',
+      pattern: 'https://github.com/iPaat/vue3-tailwind3-cookie-comply/edit/master/docs/:path',
       text: 'Edit this page on GitHub'
     },
 
