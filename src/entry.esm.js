@@ -6,4 +6,4 @@ export default {
   }
 }
 
-export { default as VueCookieComply } from "./VueCookieComply/VueCookieComply.vue";
+export { VueCookieComply }
