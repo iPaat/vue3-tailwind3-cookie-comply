@@ -1,21 +1,19 @@
 {
   "name": "@ipaat/vue3-tailwind3-cookie-comply",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS 3.",
   "author": "iPaat",
   "private": false,
   "license": "MIT",
   "homepage": "https://ipaat.github.io/vue3-tailwind3-cookie-comply/",
   "type": "module",
-  "types": "index.d.ts",
   "main": "dist/vue3-tailwind3-cookie-comply.umd.js",
   "module": "dist/vue3-tailwind3-cookie-comply.es.js",
   "browser": "dist/vue3-tailwind3-cookie-comply.es.js",
   "unpkg": "dist/vue3-tailwind3-cookie-comply.iife.js",
   "files": [
     "dist/*",
-    "src/**/*",
-    "index.d.ts"
+    "src/**/*"
   ],
   "exports": {
     ".": {
