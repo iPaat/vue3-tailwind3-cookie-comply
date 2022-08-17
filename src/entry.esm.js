@@ -1,11 +1,9 @@
-import component from './VueCookieComply/VueCookieComply.vue';
+import VueCookieComply from './VueCookieComply/VueCookieComply.vue'
 
-export default /*#__PURE__*/ (() => {
-  const installable = component;
+export default {
+  install (app) {
+    app.component('VueCookieComply', VueCookieComply)
+  }
+}
 
-  installable.install = (app) => {
-    app.component('VueCookieComply', installable);
-  };
-
-  return installable;
-})();
+export { default as VueCookieComply } from "./VueCookieComply/VueCookieComply.vue";

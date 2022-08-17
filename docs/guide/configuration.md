@@ -21,8 +21,8 @@ const preferences = [
     <div>
         <Vue3CookieComply
             :preferences="preferences"
-            bannerTitle="Cookie Preferences"
-            bannerMaxWidth="7xl"
+            banner-title="Cookie Preferences"
+            banner-max-width="7xl"
         ></Vue3CookieComply>
     </div>
 </template>
