@@ -19,17 +19,17 @@ npm install @ipaat/vue3-tailwind3-cookie-comply
 ```js{3,6}
 import { createApp } from 'vue'
 import App from './App.vue'
-import Vue3CookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
+import VueCookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
   
 const app = createApp(App)
-app.use(Vue3CookieComply)
+app.component('VueCookieComply', VueCookieComply)
 app.mount('#app')
 ```
 
 ### local
 ```js-vue{2}
 <script setup>
-import Vue3CookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
+import VueCookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
   
 //
 </script>
@@ -40,7 +40,7 @@ import Vue3CookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
 ```js{3}
 module.exports = {
   content: [
-    './node_modules/@ipaat/vue3-tailwind3-cookie-comply/dist/vue3-tailwind3-cookie-comply.js',
+    './node_modules/@ipaat/vue3-tailwind3-cookie-comply/dist/vue3-tailwind3-cookie-comply.umd.js',
 
     // ..
   ],
@@ -132,12 +132,12 @@ const onSave = (accepted) => {
 ```js-vue{3-8}
 <template>
   <div>
-    <Vue3CookieComply
+    <VueCookieComply
         :preferences="preferences"
         @on-accept-all="onAccept"
         @on-decline-all="onDecline"
         @on-save-preferences="onSavePreferences"
-    ></Vue3CookieComply>
+    ></VueCookieComply>
   </div>
 </template>
 ```

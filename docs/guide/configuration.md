@@ -21,48 +21,54 @@ const preferences = [
     <div>
         <Vue3CookieComply
             :preferences="preferences"
-            title="Cookie Preferences"
+            bannerTitle="Cookie Preferences"
             bannerMaxWidth="7xl"
         ></Vue3CookieComply>
     </div>
 </template>
 ```
 
-## title
+## bannerTitle
 * Type: `String`
 * Default: `Cookie settings`
 
 The cookie banner title.
 
-## description
+## bannerDescription
 * Type: `String`
 * Default: `We use cookies and similar technologies to help personalize content and offer a better experience. You can opt to customize them by clicking the preferences button.`
 
 The cookie banner description.
 
-## preferencesLabel
+## preferencesBtnLabel
 * Type: `String`
 * Default: `Preferences`
 
 Text from the button in the cookie banner that opens the modal for setting cookies preferences.
 
-## acceptAllLabel
+## acceptAllBtnLabel
 * Type: `String`
 * Default: `Accept All`
 
 Text from the button in the cookie banner and modal that accepts all cookies.
 
-## declineAllLabel
+## declineAllBtnLabel
 * Type: `String`
 * Default: `Decline All`
 
 Text from the button in the modal that declines all cookies (expect those marked as required).
 
-## savePreferencesLabel
+## savePreferencesBtnLabel
 * Type: `String`
 * Default: `Save`
 
 Text from the button in the modal that saves the users cookie selection.
+
+## modalTitle
+* Type: `String`
+* Default: `Your cookie settings`
+
+The cookie settings modal title.
 
 ## preferences
 * Type: `Array`

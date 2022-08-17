@@ -1,15 +1,23 @@
-import path from 'path';
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { fileURLToPath, URL } from 'url'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [vue()],
 
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src/VueCookieComply', import.meta.url))
+    }
+  },
+
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/main.js'),
-      name: 'vue3-tailwind3-cookie-comply',
-      fileName: 'vue3-tailwind3-cookie-comply',
+      formats: ['es', 'umd'],
+      entry: resolve(__dirname, 'src', 'entry.js'),
+      name: 'VueCookieComply',
+      fileName: (format) => `vue3-tailwind3-cookie-comply.${format}.js`
     },
 
     rollupOptions: {
@@ -17,9 +25,9 @@ export default defineConfig({
 
       output: {
         globals: {
-          vue: 'Vue',
-        },
-      },
-    },
-  },
-});
+          vue: 'Vue'
+        }
+      }
+    }
+  }
+})

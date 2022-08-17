@@ -1,13 +1,24 @@
 {
   "name": "@ipaat/vue3-tailwind3-cookie-comply",
+  "version": "1.0.0",
   "description": "A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS 3.",
-  "version": "0.0.3",
+  "author": "iPaat",
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://ipaat.github.io/vue3-tailwind3-cookie-comply/",
+  "type": "module",
+  "main": "./dist/vue3-tailwind3-cookie-comply.umd.js",
+  "module": "./dist/vue3-tailwind3-cookie-comply.es.js",
+  "browser": "./dist/vue3-tailwind3-cookie-comply.es.js",
   "files": [
     "dist"
   ],
-  "main": "./dist/vue3-tailwind3-cookie-comply.umd.cjs",
-  "module": "./dist/vue3-tailwind3-cookie-comply.js",
-  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-tailwind3-cookie-comply.es.js",
+      "require": "./dist/vue3-tailwind3-cookie-comply.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -37,23 +48,25 @@
     "tailwindcss": "3.x",
     "vue": "3.x"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/vue3-tailwind3-cookie-comply.js",
-      "require": "./dist/vue3-tailwind3-cookie-comply.umd.cjs"
-    }
+  "engines": {
+    "node": ">=14"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/iPaat/vue3-tailwind3-cookie-comply"
   },
-  "author": "iPaat",
-  "license": "MIT",
   "keywords": [
+    "vue",
+    "vue-cookie-comply",
+    "vue3-cookie-comply",
     "cookie",
     "consent",
     "tailwind",
-    "vue",
     "comply"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
   ]
 }
