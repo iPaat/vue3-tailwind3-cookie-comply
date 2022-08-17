@@ -22,75 +22,15 @@
  
 ## Demo
 
-Check out a demo page using Vue 3, Vite and vue-cookie-comply: [DEMO PAGE](https://tiny-taffy-6fa155.netlify.app/)
+Check out a demo page using Vue 3, Tailwind CSS 3, Vite and vue3-tailwind3-cookie-comply: [DEMO PAGE](https://tiny-taffy-6fa155.netlify.app/)
 
 ## Important
 
 > The creator assumes no liability. The use of this Vue3 component is at your own risk. Consult a lawyer if you are unsure. 
 
-## Installation
-> This package is only compatible with Vue 3.x and Tailwind CSS 3.x
+## Documentation
 
-First install `vue3-tailwind3-cookie-comply` as a dependency of your Vue app:
-
-```sh
-yarn add @ipaat/vue3-tailwind3-cookie-comply
-
-# or
-
-npm install @ipaat/vue3-tailwind3-cookie-comply
-```
-
-Then, install `vue3-tailwind3-cookie-comply` as a plugin wherever you create your Vue app:
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import Vue3CookieComply from '@ipaat/vue3-tailwind3-cookie-comply'
-
-const app = createApp(App).use(Vue3CookieComply).mount('#app')
-```
-
-Add `vue3-tailwind3-cookie-comply` to your tailwind.config.js:
-
-```js
-module.exports = {
-  content: [
-    './node_modules/@ipaat/vue3-tailwind3-cookie-comply/dist/vue3-tailwind3-cookie-comply.js',
-    
-    // ..
-  ],
-  
-  theme: {
-    extend: {
-      // ..
-    }
-  },
-  
-  plugins: [
-    // ..
-  ]
-}
-```
-
-> This will help Tailwind CSS to detect CSS classes used by `vue3-tailwind3-cookie-comply`. 
-
-## Usage
-
-```vue
-<template>
-  <div>
-    <Vue3CookieComply
-        :preferences="preferences"
-        @on-accept-all="onAccept"
-        @on-decline-all="onDecline"
-        @on-save-preferences="onSavePreferences"
-    ></Vue3CookieComply>
-  </div>
-</template>
-```
-
-> `vue3-tailwind3-cookie-comply` automatically places the component at the bottom of your page
+Check out the documentation page: [DOCUMENTATION PAGE](https://ipaat.github.io/vue3-tailwind3-cookie-comply/)
 
 ## Contributing
 
