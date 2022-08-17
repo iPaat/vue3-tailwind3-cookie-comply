@@ -1,78 +1,78 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue';
 
-import CookieToggle from './components/CookieToggle.vue'
-import CookieButton from './components/CookieButton.vue'
+import CookieToggle from './components/CookieToggle.vue';
+import CookieButton from './components/CookieButton.vue';
 
 const emit = defineEmits([
   'on-accept-all',
   'on-decline-all',
-  'on-save-preferences'
-])
+  'on-save-preferences',
+]);
 
 const props = defineProps({
   bannerTitle: {
     type: String,
-    default: 'Cookie settings'
+    default: 'Cookie settings',
   },
   bannerDescription: {
     type: String,
     default:
-      'We use cookies and similar technologies to help personalize content and offer a better experience. You can opt to customize them by clicking the preferences button.'
+      'We use cookies and similar technologies to help personalize content and offer a better experience. You can opt to customize them by clicking the preferences button.',
   },
   preferencesBtnLabel: {
     type: String,
-    default: 'Preferences'
+    default: 'Preferences',
   },
   acceptAllBtnLabel: {
     type: String,
-    default: 'Accept All'
+    default: 'Accept All',
   },
   declineAllBtnLabel: {
     type: String,
-    default: 'Decline All'
+    default: 'Decline All',
   },
   savePreferencesBtnLabel: {
     type: String,
-    default: 'Save'
+    default: 'Save',
   },
   modalTitle: {
     type: String,
-    default: 'Your cookie settings'
+    default: 'Your cookie settings',
   },
   preferences: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   target: {
     type: String,
-    default: 'body'
+    default: 'body',
   },
   bannerBackgroundColor: {
     type: [String, Array],
-    default: () => ['bg-gray-200', 'dark:bg-gray-800']
+    default: () => ['bg-gray-200', 'dark:bg-gray-800'],
   },
   bannerTextColor: {
     type: [String, Array],
-    default: () => ['text-gray-800', 'dark:text-gray-200']
+    default: () => ['text-gray-800', 'dark:text-gray-200'],
   },
   bannerDescriptionTextColor: {
     type: [String, Array],
-    default: () => ['text-gray-600', 'dark:text-gray-400']
+    default: () => ['text-gray-600', 'dark:text-gray-400'],
   },
   modalMaxWidth: {
     type: String,
-    default: 'xl'
+    default: 'xl',
   },
   bannerMaxWidth: {
     type: String,
-    default: '5xl'
-  }
-})
+    default: '5xl',
+  },
+});
 
-const showBanner = ref(true)
-const showModal = ref(false)
-const checkedValues = ref([])
+const showBanner = ref(true);
+const showModal = ref(false);
+const checkedValues = ref([]);
 
 const modalMaxWidthClass = computed(() => {
   return {
@@ -86,9 +86,9 @@ const modalMaxWidthClass = computed(() => {
     '4xl': 'sm:max-w-4xl',
     '5xl': 'sm:max-w-5xl',
     '6xl': 'sm:max-w-6xl',
-    '7xl': 'sm:max-w-7xl'
-  }[props.modalMaxWidth]
-})
+    '7xl': 'sm:max-w-7xl',
+  }[props.modalMaxWidth];
+});
 
 const bannerMaxWidthClass = computed(() => {
   return {
@@ -102,70 +102,76 @@ const bannerMaxWidthClass = computed(() => {
     '4xl': 'sm:max-w-4xl',
     '5xl': 'sm:max-w-5xl',
     '6xl': 'sm:max-w-6xl',
-    '7xl': 'sm:max-w-7xl'
-  }[props.bannerMaxWidth]
-})
+    '7xl': 'sm:max-w-7xl',
+  }[props.bannerMaxWidth];
+});
 
 const requiredCookies = computed(() => {
-  return props.preferences.map((preference) =>
-    preference.items.map((item) => (item.isRequired ? item.value : null))
-  ).flat().filter((n) => n)
-})
+  return props.preferences
+    .map((preference) =>
+      preference.items.map((item) => (item.isRequired ? item.value : null))
+    )
+    .flat()
+    .filter((n) => n);
+});
 
 const allCookies = computed(() => {
-  return props.preferences.map((preference) => preference.items.map((item) => item.value)).flat().filter((n) => n)
-})
+  return props.preferences
+    .map((preference) => preference.items.map((item) => item.value))
+    .flat()
+    .filter((n) => n);
+});
 
 const hasOnlyRequiredCookies = computed(() => {
-  return requiredCookies.value.length === props.preferences.length
-})
+  return requiredCookies.value.length === props.preferences.length;
+});
 
 onMounted(() => {
   if (localStorage.getItem('cookie-comply')) {
-    showBanner.value = false
+    showBanner.value = false;
   }
-})
+});
 
 const handleAcceptAll = () => {
-  showBanner.value = false
-  showModal.value = false
+  showBanner.value = false;
+  showModal.value = false;
 
-  localStorage.setItem('cookie-comply', JSON.stringify(allCookies.value))
+  localStorage.setItem('cookie-comply', JSON.stringify(allCookies.value));
 
-  emit('on-accept-all', allCookies.value)
-}
+  emit('on-accept-all', allCookies.value);
+};
 
 const handleDeclineAll = () => {
-  showBanner.value = false
-  showModal.value = false
+  showBanner.value = false;
+  showModal.value = false;
 
-  localStorage.setItem('cookie-comply', JSON.stringify(requiredCookies.value))
+  localStorage.setItem('cookie-comply', JSON.stringify(requiredCookies.value));
 
-  emit('on-decline-all', requiredCookies.value)
-}
+  emit('on-decline-all', requiredCookies.value);
+};
 
 const handleSave = () => {
-  showBanner.value = false
-  showModal.value = false
+  showBanner.value = false;
+  showModal.value = false;
 
-  localStorage.setItem('cookie-comply', JSON.stringify(checkedValues.value))
+  localStorage.setItem('cookie-comply', JSON.stringify(checkedValues.value));
 
-  emit('on-save-preferences', checkedValues.value)
-}
+  emit('on-save-preferences', checkedValues.value);
+};
 
 const handlePreferences = () => {
-  showModal.value = true
-}
+  showModal.value = true;
+};
 
 const handleModalClose = () => {
-  showModal.value = false
-}
+  showModal.value = false;
+};
 
 const handleToggleUpdate = ({ value, isEnabled }) => {
   isEnabled
     ? checkedValues.value.push(value)
-    : checkedValues.value.splice(checkedValues.value.indexOf(value), 1)
-}
+    : checkedValues.value.splice(checkedValues.value.indexOf(value), 1);
+};
 </script>
 
 <template>
@@ -180,7 +186,11 @@ const handleToggleUpdate = ({ value, isEnabled }) => {
         class="flex items-center justify-between space-x-6"
       >
         <div>
-          <slot :description="bannerDescription" :title="bannerTitle" name="banner-text">
+          <slot
+            :description="bannerDescription"
+            :title="bannerTitle"
+            name="banner-text"
+          >
             <h3 class="font-semibold">{{ bannerTitle }}</h3>
 
             <p :class="[bannerDescriptionTextColor]" class="text-sm">
@@ -205,7 +215,11 @@ const handleToggleUpdate = ({ value, isEnabled }) => {
               {{ preferencesBtnLabel }}
             </CookieButton>
 
-            <CookieButton class="whitespace-nowrap" color="success" @click="handleAcceptAll">
+            <CookieButton
+              class="whitespace-nowrap"
+              color="success"
+              @click="handleAcceptAll"
+            >
               {{ acceptAllBtnLabel }}
             </CookieButton>
           </slot>
@@ -263,7 +277,10 @@ const handleToggleUpdate = ({ value, isEnabled }) => {
                       </h3>
                     </slot>
 
-                    <slot :on-close="handleModalClose" name="modal-close-button">
+                    <slot
+                      :on-close="handleModalClose"
+                      name="modal-close-button"
+                    >
                       <CookieButton
                         class="absolute top-6 right-6"
                         color="danger-o"
@@ -304,7 +321,10 @@ const handleToggleUpdate = ({ value, isEnabled }) => {
                   name="modal-body"
                 >
                   <main class="px-6 overflow-y-auto py-6">
-                    <div v-for="(preference, index) in preferences" :key="index">
+                    <div
+                      v-for="(preference, index) in preferences"
+                      :key="index"
+                    >
                       <slot
                         :index="index"
                         :preference="preference"

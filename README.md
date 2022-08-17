@@ -1,6 +1,6 @@
 # Vue3 Tailwind Cookie Comply 🍪
 
-__A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS 3.__
+**A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS 3.**
 
 [![License](https://img.shields.io/npm/l/@ipaat/vue3-tailwind3-cookie-comply)](https://github.com/ipaat/vue3-tailwind3-cookie-comply/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/@ipaat/vue3-tailwind3-cookie-comply)](https://www.npmjs.com/package/@ipaat/vue3-tailwind3-cookie-comply) ![npm bundle size](https://img.shields.io/bundlephobia/min/@ipaat/vue3-tailwind3-cookie-comply)
 
@@ -21,7 +21,7 @@ __A Vue 3 compatible component to handle cookie consent styled with Tailwind CSS
 
 > Heavily inspired by Airbnb's cookie consent UI  
 > and https://github.com/yaiks/vue-cookie-comply
- 
+
 ## Demo
 
 Check out a demo page using Vue 3, Tailwind CSS 3, Vite and vue3-tailwind3-cookie-comply: [DEMO PAGE](https://tiny-taffy-6fa155.netlify.app/)
