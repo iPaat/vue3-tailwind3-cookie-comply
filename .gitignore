@@ -1,0 +1,6 @@
+.idea
+node_modules
+dist
+dist-ssr
+*.local
+tailwind.config.js
