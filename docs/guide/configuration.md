@@ -19,11 +19,11 @@ const preferences = [
   
 <template>
     <div>
-        <Vue3CookieComply
+        <VueCookieComply
             :preferences="preferences"
             banner-title="Cookie Preferences"
             banner-max-width="7xl"
-        ></Vue3CookieComply>
+        ></VueCookieComply>
     </div>
 </template>
 ```
