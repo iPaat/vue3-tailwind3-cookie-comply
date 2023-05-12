@@ -4,7 +4,7 @@ You can use slots to leverage composition and customize `vue3-tailwind3-cookie-c
 
 ::: v-pre
 ```js-vue
-<Vue3CookieComply
+<VueCookieComply
   :preferences="preferences"
   // ...
 >
@@ -41,7 +41,7 @@ You can use slots to leverage composition and customize `vue3-tailwind3-cookie-c
     
     <!-- Replace whole modal body -->
     <!-- onToggle excepts { value: string value of the preference, isEnabled: boolean } -->
-    <template v-slot:modal-content="{ preferences, onToggle }">
+    <template v-slot:modal-body="{ preferences, onToggle }">
         <main>
             <div v-for="(preference, index) in preferences" v-bind:key="index">
                 <h5>{{ preference.title }}</h5>
@@ -62,7 +62,7 @@ You can use slots to leverage composition and customize `vue3-tailwind3-cookie-c
             
         <button v-on:click="onSave" v-if="!hasOnlyRequired">Save</button>               
     </template>
-</Vue3CookieComply>
+</VueCookieComply>
 ```
 :::
 

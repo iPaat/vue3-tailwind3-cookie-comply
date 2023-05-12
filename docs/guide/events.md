@@ -24,10 +24,10 @@ const onAccept = (accepted) => {
 </setup>
   
 <template>
-    <Vue3CookieComply
+    <VueCookieComply
         :preferences="preferences"
         @on-accept-all="onAccept"
-    ></Vue3CookieComply>
+    ></VueCookieComply>
 </template>
 ```
 After `on-accept-all` is dispatched, an item with key `cookie-comply` is placed in the `localStorage` with the value of an array containing the values from every cookie. You can use the presence of this key and value to do some logic on the client. Once the `cookie-comply` key exists in the `localStorage`, the `vue3-tailwind3-cookie-comply` won't show anymore on the page.
@@ -55,10 +55,10 @@ const onDecline = (required) => {
 </setup>
   
 <template>
-    <Vue3CookieComply
+    <VueCookieComply
         :preferences="preferences"
         @on-decline-all="onDecline"
-    ></Vue3CookieComply>
+    ></VueCookieComply>
 </template>
 ```
 After `on-decline-all` is dispatched, an item with key `cookie-comply` is placed in the `localStorage` with the value of an array containing the values from the cookies marked as required. You can use the presence of this key and value to do some logic on the client. Once the `cookie-comply` key exists in the `localStorage`, the `vue3-tailwind3-cookie-comply` won't show anymore on the page.
@@ -86,10 +86,10 @@ const onSave = (accepted) => {
 </setup>
   
 <template>
-    <Vue3CookieComply
+    <VueCookieComply
         :preferences="preferences"
         @on-save-preferences="onSave"
-    ></Vue3CookieComply>
+    ></VueCookieComply>
 </template>
 ```
 After `on-save-preferences` is dispatched, an item with key `cookie-comply` is placed in the `localStorage` with the value of an array containing the values from the cookies marked as required and those the user selected. You can use the presence of this key and value to do some logic on the client. Once the `cookie-comply` key exists in the `localStorage`, the `vue3-tailwind3-cookie-comply` won't show anymore on the page.
